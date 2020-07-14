@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="dd" namespace="/" extends="struts-default">
+	<action name="book" class="struts.strutstest" method="actionlist">
+	<result name="zhuceto">/zhuceto.jsp</result>
+	<result name="failt">/failt.jsp</result>
+	<result name="biaoll" type="chain">biaoll</result>
+	<result name="biaobb" type="chain">booktime</result>
+	</action>
+	<action name="booktime" class="struts.bookshow" method="biao">
+	<result name="body">/booklist.jsp</result>
+	</action>
+	<action name="bookshow" class="struts.strutswork" method="bookdo">
+	<result name="biao" type="chain">biaoll</result>
+	</action>
+	<action name="biaoll" class="struts.strutswork" method="biao">
+	<result name="body">/body.jsp</result>
+	</action>
+	<action name="student" class="struts.strutspeople" method="workdo">
+	<result name="bodyto" type="chain">biaobb</result>
+	</action>
+	<action name="biaobb" class="struts.strutspeople" method="biao">
+	<result name="bodytwo">/managestudent.jsp</result>
+	</action>
+	</package>
+
+</struts>    
